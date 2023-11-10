@@ -1,0 +1,223 @@
+﻿.major {
+    background-image: url("/Content/picture/pic2.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 60% 100%;
+    text-align: center;
+    padding: 40px;
+    line-height: 30px;
+}
+.map .name {
+    background-image: url("/Content/picture/边框.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20% 50%;
+    text-align: center;
+    padding: 40px;
+    line-height: 30px;
+}
+
+
+h2 {
+    font-family: serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 26px; /* 根据需要调整标题字体大小 */
+    color: #000000; /* 根据需要调整标题颜色 */
+    line-height: 35px;
+}
+
+p {
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 35px;
+    padding: 0px;
+    text-indent: 2em;
+}
+
+.content img {
+    width: 100%;
+    height: auto;
+}
+
+
+.image {
+    display: block;
+    margin: 0 auto;
+    width:50px;
+    height:400px;
+  width:100%;
+}
+
+.intro {
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 35px;
+    padding: 0px;
+    text-indent: 2em;
+}
+
+
+.page-block {
+    width: 1100px;
+    background: #efefef;
+    margin: auto auto;
+}
+
+    .page-block h1 {
+        text-align: center;
+    }
+
+.page-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .page-icon button {
+        background: transparent; /* Make the buttons transparent */
+        padding: 10px 20px; /* Adjust padding for button size */
+        margin: 5px; /* Add some margin for spacing */
+    }
+
+    .page-icon button {
+        border: none;
+        background-color: #efefef;
+        padding: 4px 10px 5px;
+        font-size: 20px;
+    }
+
+        .page-icon button:nth-child(3), .page-icon button:nth-child(4) {
+            cursor: default;
+        }
+
+        .page-icon button img {
+            width: 15px;
+            height: 15px;
+        }
+
+#totalPage, #currentPage {
+    cursor: default;
+    border: none;
+    background-color: #efefef;
+    padding: 4px 10px 5px;
+    font-size: 20PX;
+}
+
+#currentPage {
+    cursor: auto;
+    text-align: center;
+    width: 40px;
+}
+
+.page-1 {
+    display: block;
+}
+
+.page-2, .page-3, .page-4, .page-5, .page-6, .page-7, .page-8 {
+    display: none;
+}
+
+hr {
+    opacity: 50%;
+}
+
+.name {
+    
+    text-align: center; /* Center the text */
+}
+
+    .name a {
+        display: block; 
+        text-decoration: none;
+        color: initial; /* Set the default text color */
+        transition: color 0.3s; /* Add a smooth color transition on hover */
+        /* Set the color when hovering */
+    }
+
+     .name a:hover {
+            color: #ff0000; /* Change the text color on hover to red (you can replace with your desired color) */
+        }
+
+
+.content .flavors {
+    font-family: serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 26px; 
+    color: #000000;
+}
+
+
+.pic2 {
+    background-color: #edc7c760; /*Set the background color to light purple and the transparency to 60%*/
+    display: flex; /*：Use Flex layout*/
+    height: 100vh; /*：Set the height of the viewport to fill the entire viewport。*/
+    justify-content: center; /*Center the content horizontally. */
+    align-items: center; /*Center the content vertically. */
+}
+
+.a {
+    position: relative; /* : Enable relative positioning*/
+    width: 650px; /*: Set the width to 650 pixels*/
+    display: flex; /*：Use Flex layout.。*/
+    justify-content: space-evenly; /*：Make the internal contents evenly distributed in the horizontal direction. */
+}
+
+.b {
+ width: 400px; 
+height: 600px; 
+transition: .4s; 
+background-size: cover; 
+}
+
+.c {
+    width: 200px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.d {
+    position: relative;
+    width: 200px;
+    height: 65px;
+    right: 0;
+    transition: .5s;
+    overflow: hidden;
+}
+
+    .d img {
+        border-radius: 10px;
+        position: absolute;
+        width: 200px;
+        transform: translate(0, -50px);
+        transition: .5s;
+        right: 0;
+    }
+
+    .d.dd {
+        opacity: 0;
+        right: 250px;
+    }
+
+    .d:hover img {
+        border-radius: 40%;
+        opacity: 0;
+        right: 250px;
+    }
+
+
+
+.video-container {
+    overflow: hidden; /* Avoid floating content spilling over the container */
+}
+
+video {
+    margin-left: 30px;
+    width: 500px;
+    float: left; /* Video floats to the left */
+    margin-right: 20px; /* You can adjust the spacing between video and text as needed */
+}
+

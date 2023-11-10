@@ -1,0 +1,49 @@
+﻿.container {
+    display: flex;  
+}
+
+.left {
+    margin-left:150px;
+    flex: 1;  
+}
+
+.right {
+    display: flex;  
+    margin-top:200px;
+    margin-left:100px;
+    flex: 1;  
+}
+body{
+    background-color:darkgray;
+}
+.login {
+    margin-top: 10px;
+    margin-left: 50px;
+    background-color: #d5c5c500;  
+    color: #2d2b2b;  
+    border: 1px solid #808080;  
+    border-radius: 4px;  
+    padding: 6px 12px;  
+    cursor: pointer;  
+}
+.register {
+    margin-top:10px;
+    margin-left:50px;
+    background-color: #d5c5c500; 
+    color: #2d2b2b;  
+    border: 1px solid #808080;  
+    border-radius: 4px;  
+    padding: 6px 12px;  
+    cursor: pointer;  
+}
+    .login:hover {
+        background-color: #808080; 
+    }
+    .register:hover {
+        background-color: #808080;  
+    }
+
+.xin {
+    margin-top: 10px;
+    margin-left: 30px;
+}

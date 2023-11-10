@@ -1,0 +1,81 @@
+﻿@model ass_2.Models.Dish
+
+@{
+    ViewBag.Title = "Delete";
+}
+<link href="~/Content/details.css" rel="stylesheet" />
+<p class="flavors">
+    <img src="~/Content/picture/pic1.png" style="width:40px;" />
+    Delete:
+</p>
+<h3>Are you sure you want to delete this?</h3>
+<hr />
+<body>
+    <div class="shell">
+        <div class="shell-top">
+            <ul class="main">
+                <li>
+                    <img src="~/Content/picture/pic1.png" />
+                    <div class="box-one">  @Html.DisplayFor(model => model.Category.Name)</div>
+
+                </li>
+                <li>
+                    <img src="~/Content/picture/buzhou.png" />
+                    <div class="box-one"> @Html.DisplayFor(model => model.steps)</div>
+                </li>
+                <li>
+                    <img src="~/Content/picture/matieral.png" />
+                    <div class="box-one"> @Html.DisplayFor(model => model.material)</div>
+                </li>
+            </ul>
+
+        </div>
+        <ul class="shell-bottom">
+            <li class="list">Cuisine</li>
+            <li class="list">steps</li>
+            <li class="list">material</li>
+        </ul>
+        <p>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-actions no-color">
+
+                    <input type="submit" value="Delete" class="custom-button" onclick="showConfirmation()" />|
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "custom-link" })
+                </div>
+            }
+        </p>
+    </div>
+    <script>
+        let list = document.querySelectorAll(".list")
+        let main = document.querySelector(".main")
+        for (let i = 0; i < list.length; i++) {
+            list[i].addEventListener("click", () => {
+                main.style.left = (i * -100) + "%"
+
+                if (i) {
+                    i == 1 ? document.body.style.backgroundColor = "rgb( 186, 232, 196 )" : document.body.style.backgroundColor = "rgb( 102, 217, 198 )"
+                } else {
+
+                    document.body.style.backgroundColor = "rgb( 140, 217, 198 )"
+                }
+            })
+        }
+
+        function showConfirmation() {
+            var isConfirmed = confirm("Are you sure you want to delete?");
+            if (isConfirmed) {
+                alert("Item deleted!");
+            } else {
+                alert("Deletion canceled.");
+            }
+        }
+    </script>
+
+
+
+
+
+</body>
+

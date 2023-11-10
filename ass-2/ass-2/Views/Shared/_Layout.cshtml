@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ass2</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/Site.css")
+    @Styles.Render("~/Content/Share.css")
+    <script src="~/Scripts/API.js"></script>
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="background-color: #efefef;">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-light container-fluid">
+        <div class="container">
+            @Html.ActionLink("China", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class=" navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Introduction", "Index", "Categories", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Production", "Index", "Dishes", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("History", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Contact", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+                @using (Html.BeginForm("Index", "Dishes", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
+                {
+                    <div class="box">
+                        <div class="form-group"  style=" margin-left: 350px;">
+                            @Html.TextBox("Search", null, new { @class = "form-control search-box", @placeholder = "Search for cuisines or dishes" })
+                        </div>
+                        <button type="submit" class="btn btn-search">Submit</button>
+                    </div>
+                }
+            </div> 
+        </div>
+    </nav>
+    <img src="~/Content/picture/1.jpg "  style="width:100%;" alt="">
+    <div class="container body-content" >
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - contact us by email:<a href="mailto:2692423190@qq.com">2692423190@qq.com</a></p>
+
+            <div class="contact">
+                <div class="email" >
+                    <p>
+                        Check HTML&CSS:
+                        <a href="#" onclick="validateHTML()">Validate HTML5</a>
+                        <a href="#" onclick="validateCSS()">Validate CSS3</a>
+                    </p>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

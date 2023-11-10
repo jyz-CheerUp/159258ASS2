@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <link rel="stylesheet" href="~/Content/index.css">
+    <div class="content">
+        <br />
+        <div class="major">
+            <h2>About the eight major Chinese cuisines </h2>
+        </div>
+      
+        <hr>
+     
+        <img src="~/Content/picture/2.jpg"  style="width: 35%; height: auto; float: left;  margin-right: 20px; " alt="">
+        <br>
+        <p class="indent">Cuisine is a genre of Chinese cuisine that has evolved over a long period of time in terms of material selection, cutting, cooking and other skills, has distinctive local flavor characteristics, and is recognized by the society as a genre of Chinese cuisine.</p>
+        <p class="indent">The cuisine of Chinese food culture refers to a set of self-contained cooking techniques and flavors formed after a long history of evolution in a certain area, due to the different climate, topography, history, products and food customs, and is recognized by all parts of the country.</p>
+        <p class="indent">As early as the Shang and Zhou dynasties, China's food culture had a prototype, with Taigongwang being the most representative, and then in the Spring and Autumn Period and the Warring States Period of Qi Huan, the flavor of northern and southern dishes in the food culture showed differences. By the time of the Tang and Song dynasties, the southern and northern foods had their own systems. In the Southern Song Dynasty, the pattern of sweet in the south and salty in the north was formed. In the early years of the Qing Dynasty, Sichuan, Shandong, Huaiyang, and Cantonese cuisine became the most influential local cuisines at that time, known as the four major cuisines. In the last years of the Qing Dynasty, the four new local cuisines of Zhejiang, Fujian, Hunan and Hui were differentiated and formed, and the "eight major cuisines" of the historical Han nationality diet were jointly cooked.</p>
+        <br>
+    </div>
+    <br />
+    <br />
+    <div class="map">
+        <div class="major">
+            <h2>Food guide</h2>
+        </div>
+        <hr /> 
+        <br />
+
+        <div class="row">
+            <div class="col-md-3 col-sm-3"  >
+                <img src="~/Content/picture/4.jpg" class="image img-fluid" alt="" />
+                @Html.ActionLink("Guangdong Cuisine", "Index", "Dishes", new { Category = "Guangdong Cuisine" }, new { @class = "black-link" })
+            </div>
+            <div class="col-md-3 col-sm-3" >
+                <img src="~/Content/picture/5.jpg" class="image img-fluid" alt="">
+                @Html.ActionLink("Sichuan Cuisine", "Index", "Dishes", new { Category = "Sichuan Cuisine" }, new { @class = "black-link" })
+            </div>
+
+            <div class="col-md-3 col-sm-3"  >
+                <img src="~/Content/picture/11.jpg" class="image img-fluid" alt="">
+                @Html.ActionLink("Hunan Cuisine", "Index", "Dishes", new { Category = "Hunan Cuisine" }, new { @class = "black-link" })
+            </div>
+            <div class="col-md-3 col-sm-3"  >
+                <img src="~/Content/picture/8.png" class="image img-fluid" alt="">
+                @Html.ActionLink("Anhui Cuisine", "Index", "Dishes", new { Category = "Anhui Cuisine" }, new { @class = "black-link" })
+            </div>
+            <div class="col-md-3 col-sm-3"  >
+                <img src="~/Content/picture/6.jpg" class="image img-fluid" alt="">
+                @Html.ActionLink("Fujian Cuisine", "Index", "Dishes", new { Category = "Fujian Cuisine" }, new { @class = "black-link" })
+            </div>
+            <div class="col-md-3 col-sm-3" >
+                <img src="~/Content/picture/7.jpg " class="image img-fluid" alt="">
+                @Html.ActionLink("Jiangsu Cuisine", "Index", "Dishes", new { Category = "Jiangsu Cuisine" }, new { @class = "black-link" })
+            </div>
+            <div class="col-md-3 col-sm-3"  >
+                <img src="~/Content/picture/9.jpg" class="image img-fluid" alt="">
+                @Html.ActionLink("Zhejiang Cuisine", "Index", "Dishes", new { Category = "Zhejiang Cuisine" }, new { @class = "black-link" })
+            </div>
+            <div class="col-md-3 col-sm-3"  >
+                <img src="~/Content/picture/13.jpg" class="image img-fluid" alt="">
+                @Html.ActionLink("Shandong Cuisine", "Index", "Dishes", new { Category = "Shandong Cuisine" }, new { @class = "black-link" })
+            </div>
+        </div>
+
+    </div>
+
+</main>

@@ -1,0 +1,63 @@
+﻿main {
+    background-color: #f2f2f2;
+}
+
+.content p {
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 35px;
+    padding: 0px;
+    text-indent: 2em;
+}
+
+.content img {
+    margin: 5px 15px;
+    width: 450px;
+    height: 350px;
+}
+
+.map h2 {
+    color: #434242;
+    line-height: 35px;
+}
+
+
+.col-md-3 {
+    border: 1px solid #000; /* Add a border with 1px width */
+    border-radius: 10px; /* Add rounded corners */
+    margin: 7.5px; /* Add spacing around each section */
+    padding: 6px; /* Add padding inside each section */
+}
+
+.col-md-3 {
+    flex: 0 0 23.5%;
+}
+
+.image {
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+
+.major {
+    background-image: url("/Content/picture/pic2.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 60% 100%;
+    text-align: center;
+    padding: 40px;
+    line-height: 30px;
+}
+
+h2 {
+    font-family: serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 26px;
+    color: #000000; 
+    line-height: 35px;
+}
+
+
+

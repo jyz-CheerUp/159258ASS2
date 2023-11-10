@@ -1,0 +1,54 @@
+﻿/* Set padding to keep content from hitting the edges */
+@font-face {
+    font-family: Champagne;
+    src: url(cac_champagne.woff) format('woff'), url(cac_champagne.ttf) format('ttf');
+}
+.body-content {
+    margin-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width:100%;
+}
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 200px;
+}
+.box {
+    display: flex;
+    align-items: center;
+}
+.btn btn-default {
+    width:20px;
+    background-color: white;
+    color: black;
+}
+.form-group{
+    margin-left:350px;
+
+}
+.search-box {
+    width: 200px; /* Adjust the width of the search box */
+    padding: 6px 12px; /* Adjust padding */
+    border: 1px solid #808080;
+    border-radius: 4px; /* Add rounded borders */
+}
+.btn-search {
+    background-color: #d5c5c500; /* Set button background color */
+    color: #2d2b2b; /* Set button text color */
+    border: 1px solid #808080; /* Remove button border */
+    border-radius: 4px; /* Add rounded corners */
+    padding: 6px 12px; /* Adjust padding */
+    cursor: pointer; /* Mouse pointer style */
+}
+
+    .btn-search:hover {
+        background-color: #808080;
+    }
+
+

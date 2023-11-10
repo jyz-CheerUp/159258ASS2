@@ -1,0 +1,94 @@
+﻿@model IEnumerable<ass_2.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+@Styles.Render("~/Content/Cate.css")
+@Scripts.Render("~Content/Intro.js")
+<div class="content">
+    <br />
+
+    <div class="major">
+        <h2>Introduction to the eight major cuisines</h2>
+    </div>
+    <hr />
+    <br>
+    <div class="video-container">
+        <video class="video" controls>
+            <source src="~/Content/picture/1211112184-1-16.mp4" type="video/mp4" />
+        </video>
+        <p class="indent">Traditional Chinese dining culture has a long history, and there are many genres in cooking. In the Qing Dynasty, the four major cuisines of Shandong, Sichuan, Guangdong and Jiangsu were formed (according to the order in Xu Ke's "Qing Barnyard Banknotes", the same below), and later, local cuisines such as Fujian, Zhejiang, Hunan and Hui gradually became famous, so China's "eight major cuisines" were formed, namely Shandong cuisine, Sichuan cuisine, Cantonese cuisine, Jiangsu cuisine, Fujian cuisine, Zhejiang cuisine, Hunan cuisine, and Huizhou cuisine. The Chinese invented cooking methods such as stir-frying (bursting, boiling), roasting (stewing, simmering, stewing, marinating), frying (boiling, pasting), frying (cooking), boiling (boiling, stewing, boiling), steaming, roasting (pickling, smoking, air-drying), cold dressing, and drenching.</p>
+        <br />
+    </div>
+        <p class="flavors">
+            <img src="~/Content/picture/pic1.png" style="width:40px;" alt="" />
+            Eight cuisines:
+        </p>
+
+<div class="page">
+    <div class="map">
+        <hr>
+        <div class="page-block">
+            @{
+                int pageNumber = 1;
+            }
+
+            @foreach (var page in Model)
+            {
+                <div class="page-@pageNumber">
+                    <img src="@Url.Content(page.Images)" class="image" alt="" />
+                    <br />
+                    <p class="name"> @Html.ActionLink(page.Name, "Index", "Dishes", new { Category = page.Name }, null)</p>
+                    <p class="intro">@page.Description</p>
+                </div>
+                pageNumber++;
+            }
+        </div>
+    </div>
+
+    <div class="page-icon">
+        <button class="firstPage" onclick="first_click()">《</button>
+        <button class="beforePage" onclick="prev_click()"><</button>
+        <button>Page<input id="currentPage" onchange="choose_page()" type="text" value="1" /></button>
+        <button>/&nbsp;&nbsp;&nbsp;<input id="totalPage" type="button" value="8"  >pages in total</button>
+        <button class="nextPage" onclick="next_click()"> ></button>
+        <button class="lastPage" onclick="last_click()">》</button>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+
+<div class="content">
+    <p class="flavors">
+        <img src="~/Content/picture/pic1.png" style="width:40px;" alt="" />
+        Pictures of eight cuisines:
+    </p>
+</div>
+<div class="pic2">
+    <div class="a">
+        <div class="b"></div>
+        <div class="c">
+            <div class="d dd"><img src="~/Content/pic2/1.jpg" alt=""></div>
+            <div class="d"><img src="~/Content/pic2/2.jpg" alt=""></div>
+            <div class="d"><img src="~/Content/pic2/3.jpg" alt=""></div>
+            <div class="d"><img src="~/Content/pic2/4.jpg" alt=""></div>
+            <div class="d"><img src="~/Content/pic2/5.jpg" alt=""></div>
+            <div class="d"><img src="~/Content/pic2/6.jpg" alt=""></div>
+            <div class="d"><img src="~/Content/pic2/7.jpg" alt=""></div>
+            <div class="d"><img src="~/Content/pic2/8.jpg" alt=""></div>
+        </div>
+    </div>
+</div>
+    </div>
+
+
+
+
+
+
+
+
+
+

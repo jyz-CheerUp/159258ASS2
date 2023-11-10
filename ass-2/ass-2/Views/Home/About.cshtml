@@ -1,0 +1,134 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<main  >
+    <link href="~/Content/contact.css" rel="stylesheet" />
+  
+        <div class="shell">
+            <div class="box">
+                <div class="images">
+                    <img src="~/Content/pic2/1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Shan Dong</h2>
+                    <p>
+                        light, tender and delicious.
+                    </p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="images">
+                    <img src="~/Content/pic2/2.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Si Chuan</h2>
+                    <p>
+                        spicy, heavy, spicy.
+                    </p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="images">
+                    <img src="~/Content/pic2/3.jpg" alt=""/>
+                </div>
+                <div class="content">
+                    <h2>An Hui</h2>
+                    <p>
+                        fresh, salty, sour and spicy, more spices.
+                    </p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="images">
+                    <img src="~/Content/pic2/4.jpg" alt=""/>
+                </div>
+                <div class="content">
+                    <h2>Fu Jian</h2>
+                    <p>
+                        fresh, salty, slightly spicy, stewed.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="images">
+                    <img src="~/Content/pic2/5.jpg" alt=""/>
+                </div>
+                <div class="content">
+                    <h2>Guang Dong</h2>
+                    <p>
+                        fresh, salty, light, special roasted meat.
+                    </p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="images">
+                    <img src="~/Content/pic2/6.jpg" alt=""/>
+                </div>
+                <div class="content">
+                    <h2>Jiang Su</h2>
+                    <p>
+                        elegant, sweet and sour, delicate.
+                    </p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="images">
+                    <img src="~/Content/pic2/7.jpg" alt=""/>
+                </div>
+                <div class="content">
+                    <h2>Hu Nan</h2>
+                    <p>
+                        spicy, fragrant, salty, slightly sour.
+                    </p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="images">
+                    <img src="~/Content/pic2/8.jpg" alt=""/>
+                </div>
+                <div class="content">
+                    <h2>Zhe Jiang</h2>
+                    <p>
+                        fresh, crispy, smooth and refreshing.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="con">
+            <div class="flex-">
+                <div class="f">
+                    <label for="food-feedback">Gourmet evaluation:</label>
+                    <textarea id="food-feedback" name="food-feedback" required style="width: 100%;" rows="4"></textarea>
+                </div>
+                <div class="f">
+                    <label for="website-feedback">Website improvement suggestions:</label>
+                    <textarea id="website-feedback" name="website-feedback" required style="width: 100%;" rows="4"></textarea>
+                </div>
+            </div>
+
+            <br>
+        </div>
+        <button type="submit" class="b" onclick="showConfirmation()">submit</button>
+
+        <div class="f">
+            <p style="margin-left:500px;">
+                Or contact us by <a href="mailto:2692423190@qq.com">email</a>:<a href="mailto:2692423190@qq.com">2692423190@qq.com</a>
+
+            </p>
+        </div>
+        <script>
+            function showConfirmation() {
+                var isConfirmed = confirm("The submission was successful");
+            }
+        </script>
+</main>

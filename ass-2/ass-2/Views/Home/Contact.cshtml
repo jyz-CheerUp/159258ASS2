@@ -1,0 +1,131 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+<main  >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="~/Content/his.css">
+    <script src="~/Scripts/history.js"></script>
+
+    <div class="shell" id="shell">
+        <div class="header">
+            <h2 class="title">Culinary history</h2>
+        </div>
+        <div class="timeline">
+            <div class="item" data-text="Features: North sweet south salty">
+                <div class="content">
+                    <img src="~/Content/picture/h1.jpg" alt="" class="img">
+                    <h2 class="content-title">Song Dynasty</h2>
+                    <p class="content-desc">
+                        As early as the Song Dynasty, diets in different parts of China were already different. In Volume 24 of Mengxi Pen Talk, it is recorded: "The southern people of Dadi love salt, and the northern people love sweet." Fish and crab with molasses, cover to facilitate the north custom also." At that time, there were two main tastes in China, the northerners liked sweet ones and the southerners liked salty ones. At that time, China did not eat "spicy", because chili pepper had not been introduced to China at that time. By the time of the Southern Song Dynasty, a large number of northerners immigrated to the south, so the sweet taste gradually spread to the south.
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="Features: Jingsu Guang three types">
+                <div class="content">
+                    <img src="~/Content/picture/h2.jpg" alt="" class="img">
+                    <h2 class="content-title">Ming Dynasty</h2>
+                    <p class="content-desc">
+                        During the Southern Song Dynasty, a large number of northerners moved south. Gradually, the food culture of the north influenced the South. They formed their own faction in the south. By the end of the Ming Dynasty, Chinese cuisine was divided into Jing, Su and Cantonese styles. Beijing style is salty, Su style, Cantonese style is sweet.
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="Features: Four major cuisines">
+                <div class="content">
+                    <img src="~/Content/picture/h3.jpg" alt="" class="img">
+                    <h2 class="content-title">Qing Dynasty</h2>
+                    <p class="content-desc">
+                        In the Qing Dynasty, Xu Ke's compilation of "Qing Barnyard Banknotes" recorded: "The cuisine has its own characteristics, such as Jingshi, Shandong, Sichuan, Guangdong, Fujian, Jiangning, Suzhou, Yangzhou, Zhenjiang, Huai'an. Later, it was summarized as the four major cuisines of Shandong, Sichuan, Guangdong and Suzhou.
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="Features: Eight major cuisines">
+                <div class="content">
+                    <img src="~/Content/picture/h4.jpg" alt="" class="img">
+                    <h2 class="content-title"> republic</h2>
+                    <p class="content-desc">
+                        Since the beginning of the Republic of China, there has been considerable cultural development in various parts of China. Sichuan-style cuisine is divided into Sichuan cuisine and Hunan cuisine, Cantonese cuisine is divided into Cantonese cuisine and Fujian cuisine, and Suzhou-style cuisine is divided into Suzhou, Zhejiang and Hui cuisine. Because the four major cuisines of Sichuan, Shandong, Guangdong and Jiangsu formed earlier, later, local cuisines such as Fujian, Zhejiang, Hunan and Hui gradually became famous, forming China's "eight major cuisines". Later, the most influential and representative cuisines that were also recognized by the society were: Shandong, Sichuan, Guangdong, Suzhou, Fujian, Zhejiang, Hunan, Hui and other cuisines, which are often called China's "eight major cuisines".
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="header">
+            <h3 class="subtitle">The formation of a cuisine is inseparable from its long history and unique cooking characteristics. At the same time, it is also affected by the natural geography, climatic conditions, resource specialties, eating habits and so on. Some people describe the "eight major cuisines" with anthropomorphic techniques as:</h3>
+            <ul class="cuisine-list">
+                <li>&bull; Lu, as pay attention to etiquette and shame of scholars </li>
+                <li>&bull; Sichuan and Hunan cuisine are like rich and talented charlatans.
+                <li>&bull; Cantonese and Fujian cuisine is like a gentleman of elegance </li>
+                <li>&bull; Su, Zhe and Hui cuisine is like the beautiful beauty of Jiangnan </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+
+        (function ($) {
+            $.fn.timeline = function () {
+                var selectors = {
+                    id: $(this),
+                    item: $(this).find(".item"),
+                    activeClass: "item--active",
+                    img: ".img"
+                };
+                selectors.item.eq(0).addClass(selectors.activeClass);
+                selectors.id.css(
+                    "background-image",
+                    "url(" +
+                    selectors.item.first()
+                        .find(selectors.img)
+                        .attr("src") +
+                    ")"
+                );
+                var itemLength = selectors.item.length;
+                $(window).scroll(function () {
+                    var max, min;
+                    var pos = $(this).scrollTop();
+                    selectors.item.each(function (i) {
+                        min = $(this).offset().top;
+                        max = $(this).height() + $(this).offset().top;
+                        var that = $(this);
+                        if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+                            selectors.item.removeClass(selectors.activeClass);
+                            selectors.id.css(
+                                "background-image",
+                                "url(" +
+                                selectors.item.last()
+                                    .find(selectors.img)
+                                    .attr("src") +
+                                ")"
+                            );
+                            selectors.item.last().addClass(selectors.activeClass);
+                        }
+                        else if (pos <= max - 10 && pos >= min) {
+                            selectors.id.css(
+                                "background-image",
+                                "url(" +
+                                $(this)
+                                    .find(selectors.img)
+                                    .attr("src") +
+                                ")"
+                            );
+                            selectors.item.removeClass(selectors.activeClass);
+                            $(this).addClass(selectors.activeClass);
+                        }
+                    });
+                });
+            };
+        })(jQuery)
+        $("#shell").timeline();
+
+
+    </script>
+</main>
+
+

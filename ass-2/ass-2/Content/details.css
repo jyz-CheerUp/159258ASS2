@@ -1,0 +1,113 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb( 140, 217, 198 );
+    transition: 1s;
+}
+
+.shell {
+    margin-left: 400px;
+    width: 500px;
+    height: 580px;
+    background-color: #fff;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+}
+
+.shell-top {
+    width: 100%;
+    height: 550px;
+    border-bottom: 1px solid rgba(223, 223, 223);
+    overflow-x: hidden;
+}
+
+    .shell-top ul {
+        width: 300%;
+        height: 100%;
+        display: flex;
+        position: relative;
+        transition: .3s;
+        left: 0;
+    }
+
+        .shell-top ul li {
+            margin-right:5px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+            .shell-top ul li .box-one {
+                width: 70%;
+                height: 10px;
+                
+            }
+            .shell-top ul li img {
+                width: 70px;
+            }
+
+
+.shell-bottom {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 58px;
+}
+
+    .shell-bottom li {
+        border-radius: 10px;
+        border: 1px solid rgb(220, 220, 220);
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        filter: grayscale(0.5)
+    }
+
+        .shell-bottom li:hover {
+            background-color: #696363;
+            text-decoration: none;
+        }
+
+.custom-link {
+    color: #696363; 
+    text-decoration: none; 
+}
+
+    .custom-link:hover {
+        color: black;
+    }
+.custom-button {
+    border: 1px solid #696363;  
+    background-color: transparent; 
+    cursor: pointer;  
+ 
+    color: black;
+    border-radius:10px;
+}
+
+    .custom-button:hover {
+        background-color: lightgrey;  
+    }
+
+ 
+.flavors {
+    font-family: serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 26px;  
+    color: #000000;
+}
+
+ 

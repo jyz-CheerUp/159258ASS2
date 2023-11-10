@@ -1,0 +1,137 @@
+﻿.form-inline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+    .form-inline label,
+    .form-inline select {
+        margin-right: 10px;
+    }
+
+    .form-inline .btn-primary {
+        background-color: transparent;
+        border: 1px solid transparent;
+        color: #000000;
+        background-color: #ccc;
+    }
+
+        .form-inline .btn-primary:hover {
+            background-color: #1c1a1a;
+        }
+.page-icon{
+    width:30px;
+}
+
+.btn-custom {
+    display: inline-block;
+    font-weight: 400;
+    color: #686464;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid #000000;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: background-color .15s;
+    text-decoration: none;
+}
+
+    .btn-custom:hover {
+        background-color:#696363
+        color: #000000;
+        text-decoration: none;
+    }
+
+
+
+.content .flavors {
+    font-family: serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 26px; /* 根据需要调整标题字体大小 */
+    color: #000000;
+}
+
+.xuanzhe {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px auto;
+}
+
+    .xuanzhe ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+        .xuanzhe ul li {
+            list-style: none;
+            background: lightgray;
+            padding: 10px 20px;
+            margin: 5px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+            .xuanzhe ul li:hover {
+                background-color: aquamarine;
+                color: wheat;
+                margin: 0 10px;
+            }
+
+    .xuanzhe .contentbox.hide {
+        display: none;
+    }
+
+figure {
+    overflow: auto;
+    white-space: nowrap;
+    float: left;
+    clear: left;
+    width: 100%;
+}
+
+.item {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+}
+
+figure img {
+    width: 100%;
+    margin: 0px;
+    border-radius: 10px;
+}
+
+figcaption {
+    color: black;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+.transparent-background {
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+}
+.flavors {
+    font-family: serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 26px;
+    color: #000000;
+}
+
+

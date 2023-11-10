@@ -1,0 +1,310 @@
+﻿@*@model IEnumerable<ass_2.Models.Dish>*@
+@model ass_2.ViewModels.DishIndexViewModel
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+
+@Styles.Render("~/Content/Dishes.css")
+@Styles.Render("~/Content/PagedList.css")
+<link rel="stylesheet" href="~/Content/PagedList.css">
+<link rel="stylesheet" href="~/Content/Dishes.css">
+<script src="~/Scripts/dish.js"></script>
+
+<p>
+    <img src="~/Content/picture/pic1.png" style="width:40px; height:auto; "alt="" />
+    @(String.IsNullOrWhiteSpace(Model.Search)?"Showing all":"You search for "+Model.Search+"; found")
+    @Model.Dishes.TotalItemCount dishes
+</p>
+
+
+@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-custom" })
+
+
+@using (Html.BeginForm("Index", "Dishes", FormMethod.Get, new { @class = "form-inline" }))
+{
+    @Html.LabelFor(vm => vm.Category, "Filter by category:")
+    @Html.DropDownListFor(vm => vm.Category, Model.CatFilterItems, "All", new { @class = "form-control" })
+
+    @Html.LabelFor(vm => vm.SortBy, "Sort by:")
+    @Html.DropDownListFor(vm => vm.SortBy, new SelectList(Model.Sorts, "Value", "key"), "Default", new { @class = "form-control" })
+
+    <input type="Submit" value="Filter" class="btn btn-primary" />
+    <input type="hidden" name="Search" id="Search" value="@Model.Search" />
+}
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Dishes.First().Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Dishes.First().material)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Dishes)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.Name)
+                    </td>
+                    <td class="material" style="width:650px;">
+                        @Html.DisplayFor(modelItem => item.material)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.Name }, new { @class = "btn btn-info btn-sm mr-1 transparent-background" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Name }, new { @class = "btn btn-danger btn-sm transparent-background" })
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="text-center">
+
+    @Html.PagedListPager(Model.Dishes, page => Url.Action("Index", new { category = Model.Category, Search = Model.Search, page }), new PagedListRenderOptions { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true })
+</div>
+
+
+
+
+
+
+<hr />
+  
+<p class="flavors" >
+    <img src="~/Content/picture/pic1.png" style="width:40px;" alt="" />
+    Food photo wall:
+</p>
+<section class="xuanzhe">
+    <ul>
+        <li class="list active" data-filter="ALL">ALL</li>
+        <li class="list" data-filter="Anhui Cuisine">Anhui Cuisine</li>
+        <li class="list" data-filter="Sichuan Cuisine">Sichuan Cuisine</li>
+        <li class="list" data-filter="Zhejiang Cuisine">Zhejiang Cuisine</li>
+        <li class="list" data-filter="Fujian Cuisine">Fujian Cuisine</li>
+        <li class="list" data-filter="Guangdong Cuisine">Guangdong Cuisine</li>
+        <li class="list" data-filter="Hunan Cuisine">Hunan Cuisine</li>
+        <li class="list" data-filter="Jiangsu Cuisine">Jiangsu Cuisine</li>
+        <li class="list" data-filter="Shandong Cuisine">Shandong Cuisine</li>
+    </ul>
+
+    <div class="pic">
+        <div target="_blank">
+            <div class="contentbox" data-content="Anhui Cuisine">
+                <figure>
+                    <div class="item">
+                        <img src="~/Content/pic2/huicai1.png" alt="" />
+                        <figcaption>Pickled fresh mandarin fish</figcaption>
+                    </div>
+
+
+                    <div class="item">
+                        <img src="~/Content/pic2/huicai2.png" alt="" />
+                        <figcaption>Steamed mushroom box</figcaption>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/pic2/huicai3.png" alt="" />
+                        <figcaption>Braised turtle with ham</figcaption>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/pic2/huicai4.jpg"  alt=""/>
+                        <figcaption>South lake prawn</figcaption>
+                    </div>
+
+                </figure>
+            </div>
+        </div>
+
+        <div target="_blank">
+            <div class="contentbox" data-content="Guangdong Cuisine">
+                <figure>
+                    <div class="item">
+                        <img src="~/Content/pic2/yue1.png" alt="" />
+                        <figcaption>A abalone</figcaption>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/pic2/yue2.png"  alt=""/>
+                        <figcaption>Guangzhou Wenchang chicken</figcaption>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/pic2/yue3.png" alt=""/>
+                        <figcaption>Suckling pig roasted in open oven</figcaption>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/pic2/yue4.png" alt="" />
+                        <figcaption>Star Dragon Emperor Banquet</figcaption>
+                    </div>
+
+                </figure>
+            </div>
+        </div>
+
+        <a target="_blank" href="#">
+            <div class="contentbox" data-content="Sichuan Cuisine">
+                <figure>
+                    <div class="item">
+                        <img src="~/Content/pic2/chuan1.png" alt="" />
+                        <figcaption>Double cooked pork slices</figcaption>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/pic2/chuan2.png" alt=""/>
+                        <figcaption>Shredded pork with fish flavor</figcaption>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/pic2/chuan3.png" alt="" />
+                        <figcaption>Boiled fish</figcaption>
+                    </div>
+                    <div class="item">
+                        <img src="~/Content/pic2/chuan4.png" alt=""/>
+                        <figcaption>Sliced Beef and Ox Tongue in Chili Sauce</figcaption>
+                    </div>
+                </figure>
+            </div>
+        </a>
+        <br /><br />
+        <a target="_blank" href="#">
+            <div class="contentbox" data-content="Hunan Cuisine">
+                <figure>
+                    <div class="item">
+                        <img src="~/Content/pic2/xiang1.png" alt="" />
+                        <figcaption>Fried fish</figcaption>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/pic2/xiang2.png" alt=""/>
+                        <figcaption>Steamed mandarin fish with powder</figcaption>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/pic2/xiang3.png" alt=""/>
+                        <figcaption>Three color louvers</figcaption>
+                    </div>
+                    <div class="item">
+                        <img src="~/Content/pic2/xiang4.png" alt=""/>
+                        <figcaption>Xiangxi sour meat</figcaption>
+                    </div>
+                </figure>
+            </div>
+        </a>
+        <a target="_blank" href="#">
+            <div class="contentbox" data-content="Jiangsu Cuisine">
+                <figure>
+                    <div class="item">
+                        <img src="~/Content/pic2/su1.png" alt=""/>
+                        <figcaption>Sheep hides fish</figcaption>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/pic2/su2.png" alt=""/>
+                        <figcaption>Farewell my concubine</figcaption>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/pic2/su3.png" alt=""/>
+                        <figcaption>Three-pack duck</figcaption>
+                    </div>
+                    <div class="item">
+                        <img src="~/Content/pic2/su4.png" alt=""/>
+                        <figcaption>Lion's head</figcaption>
+                    </div>
+                </figure>
+            </div>
+        </a>
+        <a target="_blank" href="#">
+            <div class="contentbox" data-content="Shandong Cuisine">
+                <figure>
+                    <div class="item">
+                        <img src="~/Content/pic2/lu1.png" alt=""/>
+                        <figcaption>Butterfly sea cucumber</figcaption>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/pic2/lu2.png" alt=""/>
+                        <figcaption>Sweet and sour carp</figcaption>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/pic2/lu.3.png" alt="" />
+                        <figcaption>Sautéed Sliced Chicken in Egg White</figcaption>
+                    </div>
+                    <div class="item">
+                        <img src="~/Content/pic2/lu4.png" alt=""/>
+                        <figcaption>Stewed sea cucumber with scallions</figcaption>
+                    </div>
+                </figure>
+            </div>
+        </a>
+        <a target="_blank" href="#">
+            <div class="contentbox" data-content="Zhejiang Cuisine">
+                <figure>
+                    <div class="item">
+                        <img src="~/Content/pic2/zhe1.png" alt=""/>
+                        <figcaption>West Lake fish in vinegar</figcaption>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/pic2/zhe2.png" alt=""/>
+                        <figcaption>Braised Pork Belly</figcaption>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/pic2/zhe3.png" alt=""/>
+                        <figcaption>West Lake water Shield soup</figcaption>
+                    </div>
+                    <div class="item">
+                        <img src="~/Content/pic2/zhe4.png" alt=""/>
+                        <figcaption> a chicken</figcaption>
+                    </div>
+                </figure>
+            </div>
+        </a>
+        <a target="_blank" href="#">
+            <div class="contentbox" data-content="Fujian Cuisine">
+                <figure>
+                    <div class="item">
+                        <img src="~/Content/pic2/min1.png" alt=""/>
+                        <figcaption>Anchovy shrimp with dragon body</figcaption>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/pic2/min2.png" alt=""/>
+                        <figcaption>Fish</figcaption>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Content/pic2/min4.png" alt=""/>
+                        <figcaption>Drunken spare ribs</figcaption>
+                    </div>
+                    <div class="item">
+                        <img src="~/Content/pic2/min3.png" alt=""/>
+                        <figcaption>Litchi pulp</figcaption>
+                    </div>
+                </figure>
+            </div>
+        </a>
+    </div>
+
+</section>
+
+
